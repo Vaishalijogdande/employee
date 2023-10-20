@@ -23,7 +23,9 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@PostMapping("/create")
-	public String createData(@RequestBody Employee employee) {
+	public String createData(@RequestBody Employee employee)
+	 {
+		System.out.println("Hello");
 	return employeeService.createData(employee);	
 	}
 	
@@ -35,6 +37,7 @@ public class EmployeeController {
 	@GetMapping("/get/{id}")
 	public Employee getData(@PathVariable("id") Integer id) {
 		return employeeService.getData(id);
+		
 	}
 	
 	@GetMapping("getAll")
@@ -45,6 +48,7 @@ public class EmployeeController {
 	@DeleteMapping("/delete/{id}")
 	public void deleteData(@PathVariable("id") Integer id) {
 		 employeeService.deleteData(id);
+		 
 	}
 	
 }
